@@ -22,9 +22,12 @@
             "input": "MajdooriCount/public"
           }
         ],
-        "styles": ["MajdooriCount/src/styles.scss"],
+        "styles": ["MajdooriCount/src/styles.scss",    "MajdooriCount/src/tailwind-output.css"
+    ],
         "scripts": [],
-        "postcssConfig": "postcss.config.js"
+        "stylePreprocessorOptions": {
+              "includePaths": ["node_modules/"]
+            }
       },
       "configurations": {
         "production": {
@@ -64,7 +67,10 @@
           "buildTarget": "MajdooriCount:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4201
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -87,7 +93,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "MajdooriCount:build",
-        "port": 4200,
+        "port": 4201,
         "spa": true
       }
     },

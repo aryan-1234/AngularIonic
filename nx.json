@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "tui": {
+    "enabled": false
+  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
@@ -17,7 +20,6 @@
     ],
     "sharedGlobals": []
   },
-  "nxCloudId": "681c921b318c212082e2faf1",
   "targetDefaults": {
     "@angular-devkit/build-angular:browser": {
       "cache": true,
@@ -54,6 +56,7 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
+        "interactive": false,
         "useCloudNxCache": false,
         "cacheableOperations": ["build", "lint", "test"]
       }
@@ -82,6 +85,13 @@
       "linter": "eslint",
       "style": "scss",
       "unitTestRunner": "jest"
+    },
+    "@nx/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "none"
+    },
+    "@nx/angular:component": {
+      "style": "css"
     }
   },
   "defaultProject": "MyOfficeAppWorkspace"

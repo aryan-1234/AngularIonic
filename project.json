@@ -90,7 +90,7 @@
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "MyOfficeAppWorkspace:build",
-        "port": 4200,
+        "port": 4201,
         "spa": true
       }
     },
